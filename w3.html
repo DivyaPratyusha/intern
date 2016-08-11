@@ -57,8 +57,7 @@ $(document).on("click", ".ac", function(){
 	$("#addform").show();
 	$(".mainT").hide();
 	$("#addform").html('<table class="table table-striped"><tr><td><input type="text" class="code" id="customFieldValue" name="customFieldValue" value="'+d[this.id].title+'" placeholder="City" /></td><td><input type="text" class="code" id="customFieldCountry" name="customFieldCountry" value="'+d[this.id].body+'" placeholder="Country" /></td><td><button class="btn btn-primary savedyn" id="'+this.id+'" value="save">Save</button></td></tr></table>');
-    //alert(this.id); // or alert($(this).attr('id'));
-});
+    alert(this.id); 
 //save edit
 $(document).on("click", ".savedyn", function(){
 		//var name = $("customFieldName").val();
