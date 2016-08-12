@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<style>
+
+h1   {color: black; text-align:center;}
+
+</style>
+
+<h1>SORTING</h1>
+
+<script type="text/javascript">
+
+function sortit(a,b){
+return(a-b)
+}
+function sortvalues(param){
+var inputvalues=document.sorter.sorter2.value.split(" ")
+if (param==0)
+inputvalues.sort()
+inputvalues.sort(sortit)
+document.sorter.sorter2.value=''
+for (i=0;i<inputvalues.length-1;i++)
+document.sorter.sorter2.value=document.sorter.sorter2.value+inputvalues[i]+" "
+document.sorter.sorter2.value+=inputvalues[inputvalues.length-1]
+}
+</script>
+<form name="sorter">
+<p>
+<textarea rows="3" name="sorter2" cols="30" wrap="virtual"></textarea><br>
+<input type="button" value="Sort numerically" onClick="sortvalues(1)">
+<input type="reset" value="Reset">
+</form>
+</body>
+</html>

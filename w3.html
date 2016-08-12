@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
+	<style>
+	.ac{
+		margin:3px;
+	}
+	</style>
+<body>
+
+
+<div class="container-fluid">
+<h1>Customers</h1>
+<button class="btn btn-primary addData">Add Data</button>
+<div id="addform"></div>
+<div id="id01"></div>
+
+</div>
+<script>
+var d = '';
+$(document).ready(function(){
+
+$.ajax('http://jsonplaceholder.typicode.com/posts', {
+  method: 'GET'
+}).then(function(data) {
+  myFunction(data);
+  d = data;
+});
+//call this to render the table
+function myFunction(response) {
+    var arr = response;
+    var out = "<table class=\"table table-striped mainT\"><tr><th>User</th><th>Id</th><th>Title</th><th>Body</th><th>Action</td></tr>";
+    for(var i = 0; i < arr.length; i++) {
+    	//console.log(arr[i]);
+		if(arr[i].userId){
+        out += "<tr><td class=\"col-sm-1\">" +
+        arr[i].userId +
+        "</td><td class=\"col-sm-1\">" +
+        arr[i].id +
+        "</td><td class=\"col-sm-4\">" +
+        arr[i].title +
+		"</td><td class=\"col-sm-4\">" +
+		arr[i].body+
+        "</td><td class=\"col-sm-4\"><button type=\"button\" id='"+i+"' class=\"btn btn-warning ac\"><span class=\"glyphicon glyphicon-pencil\"></span></button><button type=\"button\" id='"+i+"' class=\"btn btn-danger ad\"><span class=\"glyphicon glyphicon-trash\"></span></button></td></tr>";
+		}
+	}
+    out += "</table>";
+    $("#id01").html(out);
+}
+//edit
+$(document).on("click", ".ac", function(){
+	console.log(d);
+	$("#addform").show();
+	$(".mainT").hide();
+	$("#addform").html('<table class="table table-striped"><tr><td><input type="text" class="code" id="customFieldValue" name="customFieldValue" value="'+d[this.id].title+'" placeholder="City" /></td><td><input type="text" class="code" id="customFieldCountry" name="customFieldCountry" value="'+d[this.id].body+'" placeholder="Country" /></td><td><button class="btn btn-primary savedyn" id="'+this.id+'" value="save">Save</button></td></tr></table>');
+    //alert(this.id); // or alert($(this).attr('id'));
+});
+//save edit
+$(document).on("click", ".savedyn", function(){
+		//var name = $("customFieldName").val();
+		var city = $("#customFieldValue").val();
+		var country = $("#customFieldCountry").val();
+		var current_index = this.id; //get index of current edit
+        $.ajax('http://jsonplaceholder.typicode.com/posts/'+d[this.id].id, {
+			method: 'PUT',
+			data: {
+			id: d[this.id].id,
+			title: city,
+			body: country,
+			userId: d[this.id].userId
+			}
+		}).then(function(data) {
+			d[current_index] = data;
+		  	myFunction(d);
+		});
+		$("#addform").hide();
+		$(".mainT").show();
+		
+});
+//delete
+$(document).on("click", ".ad", function(){
+    $.ajax('http://jsonplaceholder.typicode.com/posts/'+d[this.id].id, {
+		method: 'DELETE'
+	});
+	d.splice(this.id,1);
+	myFunction(d);
+});
+//save addition
+$(document).on("click", "#addD", function(){
+		var name = $("#customFieldName").val();
+		var city = $("#customFieldValue").val();
+		var country = $("#customFieldCountry").val();		
+        d.push({"userId":1,"id":d.length+1,"title":country,"body":city});
+		$("#addform").hide();
+		$(".mainT").show();
+		myFunction(d);
+});
+//add form
+$(document).on("click", ".addData", function(){
+		$("#addform").show();
+		$(".mainT").hide();
+        $("#addform").html('<table class="table table-striped"><tr><td><input type="text" id="customFieldName" name="customFieldName" value="" placeholder="Name" /> </td><td><input type="text" class="code" id="customFieldValue" name="customFieldValue" value="" placeholder="City" /></td><td><input type="text" class="code" id="customFieldCountry" name="customFieldCountry" value="" placeholder="Country" /></td><td><button class="btn btn-primary" id="addD" value="save">Save</button></td></tr></table>');
+    });
+});
+</script>
+</body>
+</html>

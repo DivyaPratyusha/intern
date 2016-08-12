@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {font-family: "Lato", sans-serif;}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: pink;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: green;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: red;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: yellow;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    color :brown;
+    padding: 30px 30px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+h2{
+    word-spacing: 300px;
+     background-color: blue;
+
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    float: right;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 2px 1px;
+    cursor: pointer;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+    });
+  $(".accordion_head").click(function(){
+    if ($('.accordion_body').is(':visible')) {
+      $(".accordion_body").slideUp(600);
+      $(".plusminus").text('+');
+    }
+    $(this).next(".accordion_body").slideDown(600); 
+    $(this).children(".plusminus").text('-');
+  });
+});
+</script>
+<body>
+
+
+<ul class="tab">
+  <li><a href="#" class="tablinks" onclick="openwork(event, 'Account Overview')">Account Overview</a>
+  </li>
+  <li><a href="#" class="tablinks" onclick="openwork(event, 'Billing Information')">Billing Informartion</a></li>
+</ul>
+
+
+ <div id="Account Overview" class="tabcontent">
+   <div class="accordion_container">
+    <div class="accordion_head">Time and Employee Management<span class="plusminus">+</span>  </div>
+      <div class="accordion_body" style="display: none;"   >  <button class="button" >add user accounts</button>  
+
+      <p> 
+
+          Plan:  Time and Employment Management Systems with Unlimited sales
+        <br>
+                Price: $9.00-0.00 
+                <br>
+  Subscription Amount: $90.00
+  <br>
+             Discount: 100%(unlimited users for beta joiners)
+             <br>
+
+       Billing Amount: $0.00
+       <br>
+       <br> 
+<h2> Date  Type Details  Amount</h2>
+<h6> There  are  no results</h6>
+      </div>
+      
+    <div class="accordion_head">Vendor and Invoice Management<span class="plusminus">+</span><button class="button" >learn more</button> </div>
+  
+      <div class="accordion_body" style="display: none;">
+      <p>Works fine</p>
+      </div>
+    
+ 
+  </div>
+</div>
+
+<div id="Billing Information" class="tabcontent">
+  <h3>Billing information</h3>
+
+</div>
+
+
+<script>
+function openwork(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     
+</body>
+</html>
