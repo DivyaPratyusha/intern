@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+  #btn_s{
+    width:100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+</style>
 <script type= "text/javascript" src = "countries.js"></script>
 </head>
 <body>
@@ -8,6 +15,7 @@
          <h1> Country/State Selection </h1>
 
         <hr/>
+        <form>
         <br/>Select Country (with states):
         <select id="country" name="country"></select>
         <br />State:
@@ -21,6 +29,10 @@
         <br/>
         <br />
         <br />
+    
+    <input type="submit"  value="Submit" id=" btn_s">   <button type="clear" value="Reset">clear</button>
     </div>
+    
+
 </body>
 </html>
