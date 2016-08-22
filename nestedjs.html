@@ -1,0 +1,31 @@
+<html>
+   <head>
+    <h1>nested function js</h1>
+      
+      <script type="text/javascript">
+         
+            function hypotenuse(a, b) {
+               function square(x) { return x*x; }
+               return Math.sqrt(square(a) + square(b));
+            }
+            
+            function secondFunction(){
+               var result;
+               result = hypotenuse(12,2);
+               document.write ( result );
+            }
+         
+      </script>
+      
+   </head>
+   <body>
+      <p>the hypotenuse of 12,2 is </p>
+      
+      <form>
+         <input type="button" onclick="secondFunction()" value="answer">
+      </form>
+      
+     
+   
+   </body>
+</html>
