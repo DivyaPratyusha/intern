@@ -1,0 +1,25 @@
+
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript">
+function hyp(form) {
+a = parseInt(form.a.value);
+b = parseInt(form.b.value);
+ans.innerHTML = Math.sqrt(a*a + b*b) 
+}
+ </script>
+ <body>
+<form>
+
+A : <input type="number" name="a"><br>
+<br>
+B : <input type="number" name="b" > <input type="button" value="Solve" onClick="hyp(this.form)" >
+</form>
+<br>
+
+ Answer is : <div name="ans" id="ans" style="font-size: 22px; margin-top: 10px ">
+</div>
+</body>
+</head>
+</html>
