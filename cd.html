@@ -1,0 +1,68 @@
+<html>
+
+<head>
+
+<title>Object Creation</title>
+
+<script language="JavaScript">
+function WBook(bookName, writer, yearPublished)
+{
+    this.Title  = bookName;
+    this.Author = writer;
+    this.CopyrightYear = yearPublished;
+}
+
+function displayCollection()
+{
+  var book1 = new WBook("How to devolope software", "Charles", 1981);
+  var book2 = new WBook("how to learn c,c++", "Babage", 1991);
+  var book3 = new WBook("Environmental studies", "Dawin", 1996);
+
+  document.frmBooks.txtTitle1.value  = book1.Title;
+  document.frmBooks.txtAuthor1.value = book1.Author;
+  document.frmBooks.txtCopyrightYear1.value = book1.CopyrightYear;
+
+  document.frmBooks.txtTitle2.value = book2.Title;
+  document.frmBooks.txtAuthor2.value = book2.Author;
+  document.frmBooks.txtCopyrightYear2.value = book2.CopyrightYear;
+
+  document.frmBooks.txtTitle3.value = book3.Title;
+  document.frmBooks.txtAuthor3.value = book3.Author;
+  document.frmBooks.txtCopyrightYear3.value = book3.CopyrightYear;
+}
+</Script>
+</head>
+
+<body>
+
+<h1>Book Collection</h1>
+<form name="frmBooks">
+  <table border="0" width="69%">
+    <tr>
+      <td width="16%">Title</td>
+      <td width="30%">Author</td>
+      <td width="54%"> Year</td>
+    </tr>
+    <tr>
+      <td width="16%"><input type="text" name="txtTitle1" size="31"></td>
+      <td width="30%"><input type="text" name="txtAuthor1" size="31"></td>
+      <td width="54%"><input type="text" name="txtCopyrightYear1" size="9"></td>
+    </tr>
+    <tr>
+      <td width="16%"><input type="text" name="txtTitle2" size="31"></td>
+      <td width="30%"><input type="text" name="txtAuthor2" size="31"></td>
+      <td width="54%"><input type="text" name="txtCopyrightYear2" size="9"></td>
+    </tr>
+    <tr>
+      <td width="16%"><input type="text" name="txtTitle3" size="31"></td>
+      <td width="30%"><input type="text" name="txtAuthor3" size="31"></td>
+      <td width="54%"><input type="text" name="txtCopyrightYear3" size="9"></td>
+    </tr>
+  </table>
+  <p><input type="button" value="Show Collection" name="btnShow" onClick="displayCollection()">
+     <input type="reset" value="Reset" name="btnReset"></p>
+</form>
+
+</body>
+
+</html>
