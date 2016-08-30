@@ -1,5 +1,6 @@
 function Submit(){
-  var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+  var emailRegex =  /^[\w\-\.\+]+\@[a-zA-Z\.\-]+\.[a-zA-z]{2,4}$/;
+  var nameRegex=/^[a-zA-Z]+$/;
   var fname = document.form.Name.value,
     lname = document.form.LastName.value,
     femail = document.form.Email.value,
@@ -14,6 +15,10 @@ function Submit(){
      document.form.Name.focus() ;
    document.getElementById("errorBox").innerHTML = "enter the first name";
      return false;
+   }else if(!nameRegex.test(fname)){
+    document.form.Name.focus();
+    document.getElementById("errorBox").innerHTML = "enter the valid name";
+    return false;
    }
   if( lname == "" )
    {
@@ -63,7 +68,8 @@ function Submit(){
        return false;
       }
     if(fname != '' && lname != '' && femail != '' && fpassword != '' && fmonth != '' && fday != '' && fyear != ''){
-      document.getElementById("errorBox").innerHTML = "form submitted successfully";
+      window.location.reload()  
+      return true;  
 
       }
   
