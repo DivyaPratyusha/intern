@@ -8,10 +8,19 @@
 body {background-color:pink;}
 h1   {color: green; text-align:center;}
 p    {color: black;}
+ input.error {
+    color: red;
+}
+.error {
+    color: red;
+}
+
+
 </style>
 <script>
 $(function() {
 	 $("form").validate({
+   
     rules: {
       name: {
       	  required: true,
@@ -66,13 +75,13 @@ $(function() {
  <h2>Registration</h2>
   <form action="" name="form">
 <form action="" name="form">
-
-    <label for="name"> Name</label>
-    <input type="text" name="name"  placeholder="name"/>     
+Name:
+   
+    <input type="text" name="name"  placeholder="name"/>     <label for="name" class="error" ></label> 
     <br>
     <br>
-    <label for="age"> Age </label>
-     <input type="number" name="age"  maxlength="2" placeholder="age"/>
+Age:   
+     <input type="number" name="age" maxlength="2" placeholder="age"/>   <label for="age"  class="error">  </label>
      <br>
      <br>
      Gender:
@@ -97,9 +106,9 @@ Adress:
      <textarea name="adress" placeholder="adress"rows="10" cols="30"></textarea>
             <br>
             <br> 
-            <br> 
+         <br> 
 Education:  
-     <label for="education" class="error">  </label>
+    <label for="education" class="error">  </label>    
      
      <br>
      <br>
@@ -115,13 +124,13 @@ Education:
               <br>
               <br>
 Email:
-<label for="email"> </label>
-    <input type="email" name="email"  placeholder="email"/>     
+
+    <input type="email" name="email"  placeholder="email"/>   <label for="email" class="error"> </label>  
     <br>
     <br>
     Password:
-    <label for="password"> </label>
-    <input type="password" name="password" value="" placeholder="password"/>     
+    
+    <input type="password" name="password" value="" placeholder="password"/> <label for="password" class="error"> </label>     
     <br>
     <br>
    
@@ -132,7 +141,7 @@ Email:
 
 
             City:  
-                 <select name="city">
+                 <select name="city" class="error">
                  <br>
   
                  <option value="">select</option>
