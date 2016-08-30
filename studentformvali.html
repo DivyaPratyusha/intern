@@ -4,6 +4,11 @@
 <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js">
 </script>
+<style>
+body {background-color:pink;}
+h1   {color: green; text-align:center;}
+p    {color: black;}
+</style>
 <script>
 $(function() {
 	 $("form").validate({
@@ -26,11 +31,24 @@ $(function() {
       {
          required: true,
      },
+     email:
+     {
+      required: true,
+     },
+     password:
+     {
+      required: true,
+     },
+     
      city:
      {
      	required: true,
      },
-    
+    term:
+    {
+      required: true,
+    },
+  
     
   submit: function(form) {
       form.submit();
@@ -96,6 +114,18 @@ Education:
               <input type="checkbox" name="education"   value="education"/>PHD
               <br>
               <br>
+Email:
+<label for="email"> </label>
+    <input type="email" name="email"  placeholder="email"/>     
+    <br>
+    <br>
+    Password:
+    <label for="password"> </label>
+    <input type="password" name="password" value="" placeholder="password"/>     
+    <br>
+    <br>
+   
+
 
 
    
@@ -103,6 +133,7 @@ Education:
 
             City:  
                  <select name="city">
+                 <br>
   
                  <option value="">select</option>
    				 <option value="vizag">Vizag</option>
@@ -111,8 +142,13 @@ Education:
     			 <option value="Delhi">Delhi</option>
   				 </select>
   				 <br>
-  				 <br>
-
+  				<br>
+          
+ 
+<input type="checkbox" name="term"  value="term"/> I Accept The Terms and Conditions
+<br>
+ <label for="term" class="error">  </label>
+ <br>
 
 
    <button type="submit">Register</button>  <button type="reset" value="Reset">clear</button>
