@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<title>user signup form validation </title>
+ <script type="text/javascript" src="validation2.js"></script>
+ <style>
+ p {
+font-size:12px;
+color:red;
+margin-left:70px
+}
+#addr {
+margin-left:50px
+}
+
+</style>
+</head>
+<body>
+<div class="main">
+<h1>Form Validation Using jQuery</h1>
+<div id="form">
+<p id="head"></p> 
+<form action="" method="post">
+<label>Full Name:</label>
+<input id='firstname' type='text' align="left">
+<p id="p1"></p> 
+<label>Lastname :</label>
+<input id='lastname' type='text'> 
+<p id="p2"></p> 
+<label>Email:  </label>
+<input id='email' type='text'>
+<p id="p3"></p> 
+<label>Address:</label>
+<br>
+ <textarea name="adress" id='addr' rows="10" cols="30"></textarea>
+ <br>
+ <p id="p4"></p> 
+<label>Zip Code:</label>
+<input id='zip' type='text' maxlength='6'>
+<p id="p5"></p> <!-- This Segment Displays The Validation Rule For Zip -->
+<button id="submit">Check Form</button>
+</form>
+</div>
+</div>
+</body>
+</html>

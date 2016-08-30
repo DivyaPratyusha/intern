@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js">
+</script>
+<script>
+$(function() {
+	 $("form").validate({
+    rules: {
+      name: {
+      	  required: true,
+      	},
+      	    age: {
+         required: true,
+     },
+     gender: 
+     	 {
+         required: true,
+     },
+     adress:
+      {
+         required: true,
+     },
+     education:
+      {
+         required: true,
+     },
+     city:
+     {
+     	required: true,
+     },
+    
+    
+  submit: function(form) {
+      form.submit();
+
+    }
+
+    }
+});
+	});
+
+</script>
+</head>
+<body>
+<div class="container">
+ <h2>Registration</h2>
+  <form action="" name="form">
+<form action="" name="form">
+
+    <label for="name"> Name</label>
+    <input type="text" name="name"  placeholder="name"/>     
+    <br>
+    <br>
+    <label for="age"> Age </label>
+     <input type="number" name="age"  maxlength="2" placeholder="age"/>
+     <br>
+     <br>
+     Gender:
+     <label for="gender" class="error"> </label>
+     <br>
+     <br>
+      <label for="gender_male">
+   <input  type="radio"  value="m" name="gender" />
+  Male
+</label>
+<label for="gender_female">
+  <input  type="radio"  value="f" name="gender"/>
+  Female
+</label>
+<br>
+<br>
+
+Adress:
+     <label for="adress" class="error" > </label>
+     <br>
+     <br>
+     <textarea name="adress" placeholder="adress"rows="10" cols="30"></textarea>
+            <br>
+            <br> 
+            <br> 
+Education:  
+     <label for="education" class="error">  </label>
+     
+     <br>
+     <br>
+             <input type="checkbox" name="education"  value="education"/>High school
+              <br>
+              <input type="checkbox" name="education"  value="education"/>Diploma
+              <br>
+              <input type="checkbox" name="education" value="education"/>Degree/Graduation
+              <br>
+              <input type="checkbox" name="education"  value="education"/>Post Graduation
+              <br>
+              <input type="checkbox" name="education"   value="education"/>PHD
+              <br>
+              <br>
+
+
+   
+
+
+            City:  
+                 <select name="city">
+  
+                 <option value="">select</option>
+   				 <option value="vizag">Vizag</option>
+    			 <option value="Bnaglore">Banglore</option>
+    			 <option value="Mumbai">Mumbai</option>
+    			 <option value="Delhi">Delhi</option>
+  				 </select>
+  				 <br>
+  				 <br>
+
+
+
+   <button type="submit">Register</button>  <button type="reset" value="Reset">clear</button>
+   </form>
+</div>
+</body>
+</html>
+
+

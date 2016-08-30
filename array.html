@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<p> ADD AND DELETE OF ELEMTS OF AN ARRAY </p>
+<br>
+
+<h3>Add data :</h3>   <button onclick="myFunction()" class="button">ADD</button>
+<h3>Delete data :</h3> <button onclick="myFunction1()" class="button2">DELETE</button>
+
+<p id="demo"></p>
+
+<script>
+var courses = ["C", "Oracle", "API", "Java"];
+document.getElementById("demo").innerHTML = courses;
+function myFunction() {
+    courses.splice(2, 0, "C++", "AJAX");
+    document.getElementById("demo").innerHTML = courses;
+}
+var courses = ["C", "Oracle", "API", "Java"];
+document.getElementById("demo").innerHTML = courses;
+function myFunction1() {
+    courses.pop();
+    document.getElementById("demo").innerHTML = courses;
+}
+
+</script>
+
+</body>
+</html>
