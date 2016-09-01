@@ -27,10 +27,13 @@ $(function() {
       	},
       	    age: {
          required: true,
+          digits:true,
+          maxlength:2,
      },
      gender: 
      	 {
          required: true,
+
      },
      adress:
       {
@@ -74,14 +77,13 @@ $(function() {
 <div class="container">
  <h2>Registration</h2>
   <form action="" name="form">
-<form action="" name="form">
 Name:
    
     <input type="text" name="name"  placeholder="name"/>     <label for="name" class="error" ></label> 
     <br>
     <br>
 Age:   
-     <input type="number" name="age" maxlength="2" placeholder="age"/>   <label for="age"  class="error">  </label>
+     <input type="number" name="age" placeholder="age"/>   <label for="age"  class="error">  </label>
      <br>
      <br>
      Gender:
@@ -103,7 +105,7 @@ Adress:
      <label for="adress" class="error" > </label>
      <br>
      <br>
-     <textarea name="adress" placeholder="adress"rows="10" cols="30"></textarea>
+     <textarea name="adress" placeholder="adress" rows="10" cols="30"></textarea>
             <br>
             <br> 
          <br> 

@@ -1,0 +1,58 @@
+<HTML>
+      <HEAD>
+        <TITLE>Register</TITLE>
+
+        <script type="text/javascript">
+
+          function addtext()
+          {
+             var fname = document.myform.first_name.value;
+             var lname = document.myform.last_name.value;
+             var age   = document.myform.age.value; 
+             var email = document.myform.email.value;
+             var address = document.myform.address.value; 
+
+             document.writeln("Thank you! You have just entered the following:");
+             document.writeln("<pre>");
+             document.writeln("First Name    : " + fname);
+             document.writeln("Last Name     : " + lname);
+             document.writeln("age           : " +  age );
+             document.writeln("Email Address : " + email);
+             document.writeln("Address       : " + address);
+             
+
+          }
+        </script>
+      </HEAD>
+      <BODY>
+
+    
+<b>Register</b> <br></br>   
+<form name="myform">
+
+  <label for="first_name">First Name: </label> <br>
+  <input  type="text" name="first_name" maxlength="50" size="30" required>
+    <br>
+  <label for="last_name">Last Name: </label><br>
+  <input  type="text" name="last_name" maxlength="50" size="30" required>
+    <br>
+  <label for="age"> Age: </label> <br>
+  <input type="number" name="age" maxlength="2" size="5" required>  
+  <br>
+  <label for="email">Email Address:</label><br>
+  <input  type="email" name="email" maxlength="80" size="30" required>
+  <br>
+   <label for="address">Address:</label>
+   <br>
+   <textarea name="address" rows="5" cols="30" required></textarea>
+    <br>
+  <input type="submit" value="Submit" onClick="addtext()">
+
+</form>
+<script>
+$("#myform").validate();
+
+</script>
+
+    </BODY>
+    </HTML>
