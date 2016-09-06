@@ -8,32 +8,20 @@
 body {background-color:pink;}
 h1   {color: green; text-align:center;}
 p    {color: black;}
- input.error {
-    color: red;
-}
-.error {
-    color: red;
-}
-
-
 </style>
 <script>
 $(function() {
-	 $("form").validate({
-   
+   $("form").validate({
     rules: {
       name: {
-      	  required: true,
-      	},
-      	    age: {
+          required: true,
+        },
+            age: {
          required: true,
-          digits:true,
-          maxlength:2,
      },
      gender: 
-     	 {
+       {
          required: true,
-
      },
      adress:
       {
@@ -54,7 +42,7 @@ $(function() {
      
      city:
      {
-     	required: true,
+      required: true,
      },
     term:
     {
@@ -64,26 +52,24 @@ $(function() {
     
   submit: function(form) {
       form.submit();
-
     }
-
     }
 });
-	});
-
+  });
 </script>
 </head>
 <body>
 <div class="container">
  <h2>Registration</h2>
   <form action="" name="form">
-Name:
-   
-    <input type="text" name="name"  placeholder="name"/>     <label for="name" class="error" ></label> 
+<form action="" name="form">
+
+    <label for="name"> Name</label>
+    <input type="text" name="name"  placeholder="name"/>     
     <br>
     <br>
-Age:   
-     <input type="number" name="age" placeholder="age"/>   <label for="age"  class="error">  </label>
+    <label for="age"> Age </label>
+     <input type="number" name="age"  maxlength="2" placeholder="age"/>
      <br>
      <br>
      Gender:
@@ -105,12 +91,12 @@ Adress:
      <label for="adress" class="error" > </label>
      <br>
      <br>
-     <textarea name="adress" placeholder="adress" rows="10" cols="30"></textarea>
+     <textarea name="adress" placeholder="adress"rows="10" cols="30"></textarea>
             <br>
             <br> 
-         <br> 
+            <br> 
 Education:  
-    <label for="education" class="error">  </label>    
+     <label for="education" class="error">  </label>
      
      <br>
      <br>
@@ -126,13 +112,13 @@ Education:
               <br>
               <br>
 Email:
-
-    <input type="email" name="email"  placeholder="email"/>   <label for="email" class="error"> </label>  
+<label for="email"> </label>
+    <input type="email" name="email"  placeholder="email"/>     
     <br>
     <br>
     Password:
-    
-    <input type="password" name="password" value="" placeholder="password"/> <label for="password" class="error"> </label>     
+    <label for="password"> </label>
+    <input type="password" name="password" value="" placeholder="password"/>     
     <br>
     <br>
    
@@ -143,17 +129,17 @@ Email:
 
 
             City:  
-                 <select name="city" class="error">
+                 <select name="city">
                  <br>
   
                  <option value="">select</option>
-   				 <option value="vizag">Vizag</option>
-    			 <option value="Bnaglore">Banglore</option>
-    			 <option value="Mumbai">Mumbai</option>
-    			 <option value="Delhi">Delhi</option>
-  				 </select>
-  				 <br>
-  				<br>
+           <option value="vizag">Vizag</option>
+           <option value="Bnaglore">Banglore</option>
+           <option value="Mumbai">Mumbai</option>
+           <option value="Delhi">Delhi</option>
+           </select>
+           <br>
+          <br>
           
  
 <input type="checkbox" name="term"  value="term"/> I Accept The Terms and Conditions
@@ -167,5 +153,3 @@ Email:
 </div>
 </body>
 </html>
-
-

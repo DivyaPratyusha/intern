@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body{color:red;}
+form {color: green ;}
+span {color:red;}
+
+</style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js">
+</script>
+</head>
+
+<body>
+ <script>
+function myValidate() {
+    var x = document.forms["formA"]["name"].value;
+    var y = document.forms["formA"]["age"].value;
+    var z = document.forms["formA"]["gender"].value;
+    var a = document.forms["formA"]["DOB"].value;
+    var b = document.getElementById("nameErr");    
+    var c = document.getElementById("ageErr");
+    var d = document.getElementById("genderErr");
+    var e = document.getElementById("DOBErr");
+
+    if (!x || x.length==0) {
+        b.innerHTML = "Name Must Be Filled Out";
+        return false;
+    } else {
+        b.innerHTML = "";
+    }
+
+    if (!y || y.length==0) {
+        c.innerHTML = "age Must Be Filled Out";
+        return false;
+    } else {
+        c.innerHTML = "";
+    }
+
+    if (!z || z.length==0) {
+        d.innerHTML = "gender Must Be Filled Out";
+        return false;
+    } else {
+        d.innerHTML = "";
+    }
+
+    if (!a || a.length==0) {
+        e.innerHTML = "DOB Must Be Filled Out";
+        return false;
+    } else {
+        e.innerHTML = "";
+    }
+    return true;
+}
+</script> 
+<script>
+function myValidatee() {
+    var x = document.forms["formB"]["cphone"].value;
+    var y = document.forms["formB"]["wphone"].value;
+    var z = document.forms["formB"]["email"].value;
+    var a = document.forms["formB"]["cemail"].value;
+    var b = document.getElementById("cpErr");    
+    var c = document.getElementById("wpErr");
+    var d = document.getElementById("peErr");
+    var e = document.getElementById("ceErr");
+
+    if (!x || x.length==0) {
+        b.innerHTML = "CellPhone Must Be Filled Out";
+        return false;
+    } else {
+        b.innerHTML = "";
+    }
+
+    if (!y || y.length==0) {
+        c.innerHTML = "WorkPhone Must Be Filled Out";
+        return false;
+    } else {
+        c.innerHTML = "";
+    }
+
+    if (!z || z.length==0) {
+        d.innerHTML = "PersonalEmail Must Be Filled Out";
+        return false;
+    } else {
+        d.innerHTML = "";
+    }
+
+    if (!a || a.length==0) {
+        e.innerHTML = " CompanyEmail Must Be Filled Out";
+        return false;
+    } else {
+        e.innerHTML = "";
+    }
+    return true;
+}
+</script>
+<script>
+function myValidation() {
+    var x = document.forms["formC"]["namee"].value;
+    var y = document.forms["formC"]["address"].value;
+    var z = document.forms["formC"]["addresss"].value;
+    var a = document.forms["formC"]["city"].value;
+    var b = document.getElementById("nameeErr");    
+    var c = document.getElementById("addressErr");
+    var d = document.getElementById("addresssErr");
+    var e = document.getElementById("cityErr");
+
+    if (!x || x.length==0) {
+        b.innerHTML = "Name Must Be Filled Out";
+        return false;
+    } else {
+        b.innerHTML = "";
+    }
+
+    if (!y || y.length==0) {
+        c.innerHTML = "Address1 Must Be Filled Out";
+        return false;
+    } else {
+        c.innerHTML = "";
+    }
+
+    if (!z || z.length==0) {
+        d.innerHTML = "Address2 Must Be Filled Out";
+        return false;
+    } else {
+        d.innerHTML = "";
+    }
+
+    if (!a || a.length==0) {
+        e.innerHTML = "City Must Be Filled Out";
+        return false;
+    } else {
+        e.innerHTML = "";
+    }
+    return true;
+}
+</script>
+
+
+    <div class="col-sm-1 col-md-5 col-lg-3" >
+      <form  action="bs.php" onsubmit="return myValidate()" method="post" name="formA">
+      <H3>PERSONAL FORM</H3>
+Name:
+<br>
+   <span id="nameErr"></span>
+   <br>
+    <input type="text" name="name"  placeholder="name"/>     
+    <br><br>
+    
+Age: 
+<br> 
+ <span id="ageErr"></span>
+ <br>
+     <input type="number" name="age" placeholder="age"/> 
+     <br><br>
+     
+ Gender:<br>
+  <span id="genderErr"></span>
+     <br>
+        <input type="radio" name="gender" value="male" > Male
+        
+         <input type="radio" name="gender" value="female"> Female
+         <br><br>
+
+Date Of Birth:
+<br>
+  <span id="DOBErr"></span>
+  <br>
+    <input type="date" name="DOB"  placeholder="dob"/>     
+    
+              <br>
+               <br>                                                                       
+             <button type="submit" value="submit">Register</button>  
+         <br> 
+ </form>
+ </div>
+ 
+   <div class="col-sm-2 col-md-5 col-lg-4" >
+    <form  action="bs2.php"  onsubmit="return myValidatee()" method="post" name="formB" >
+	<H3>CONTACT INFORMATION</H3>
+	
+	  
+CellPhone:
+<br>
+  <span id="cpErr"></span>
+  <br>
+    <input type="number" name="cphone"  placeholder="number"/>     
+    <br>
+    <br>
+
+
+WorkPhone: 
+ 
+ <br> 
+ <span id="wpErr"></span>
+  <br>
+ <input type="number" name="wphone" placeholder="number"/> 
+     <br><br>  
+ PersonalEmail:
+     
+    
+     <br>
+     <span id="peErr"></span>
+  <br>
+    <input type="email" name="email"  placeholder="email"/>    
+    <br>
+    <br> 
+    CompanyEmail:
+     
+     
+     <br>
+     <span id="ceErr"></span>
+  <br>
+    <input type="email" name="cemail"  placeholder="email"/>    
+    <br>
+    <br>    
+     
+             <button type="submit" value="submit">Register!</button> 
+        
+         
+ </form>
+</div>
+
+    <div class="col-sm-2 col-md-5 col-lg-4"  >
+    <form  action="bs3.php" onsubmit="return myValidation()" method="post" name="formC">
+	 <H3>ADDRESS INFORMATION</H3>
+  
+
+Name:
+<br>
+  <span id="nameeErr"></span>
+  <br> 
+   
+    <input type="text" name="namee"  placeholder="name"/>     
+    <br>
+    <br>
+Address1:
+<br>
+   <span id="addressErr"></span>
+  <br> 
+    
+     <textarea name="address" placeholder="address" rows="1" cols="20"></textarea>
+            <br>
+            <br> 
+
+            Address2:
+<br>
+   <span id="addresssErr"></span>
+  <br> 
+    
+     <textarea name="addresss" placeholder="address" rows="1" cols="20"></textarea>
+            <br>
+            <br> 
+
+City:  
+   <br>  
+   <span id="cityErr"></span>
+  <br>           
+                 <select name="city">
+                 <br>
+  
+                 <option value="">select</option>
+           <option value="vizag">Vizag</option>
+           <option value="Bnaglore">Banglore</option>
+           <option value="Mumbai">Mumbai</option>
+           <option value="Delhi">Delhi</option>
+           </select>
+           <br>
+          <br>
+             <button type="submit" value="submit">Register!!</button> 
+         <br> 
+ </form>
+ </div>
+<form>
+<br>
+<button type="submit" value="submit" >Completed</button> 
+</form>
+
+    
+</body>
+</html>

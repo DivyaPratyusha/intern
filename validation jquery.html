@@ -15,16 +15,16 @@ $(function() {
     rules: {
       firstname: {
          required: true,
-         lettersonly: true
+         
        },
       
       lastname: {
          required: true,
-         lettersonly: true
+        
        },
       email: {
         required: true,
-        email: true
+       
       },
       password: {
         required: true,
@@ -38,28 +38,7 @@ $(function() {
         },
         },
    
-    messages: {
-      firstname: 
-      {
-       required: "Please enter your firstname", 
-       lettersonly: "please enter only letters"
-      },
-
-      lastname: {
-       required: "Please enter your lastname",
-       lettersonly: "please enter only letters"
-      },
-      password: {
-        required: "Please provide a password",
-        minlength: "Your password must be at least 5 characters long"
-      },
-      confirm_password: {
-          required: "Please provide a password",
-          minlength: "Your password must be at least 5 characters long",
-          equalTo: "Please enter the same password as above"
-        },
-      email: "Please enter a valid email address"
-    },
+   
     
     submit: function(form) {
       form.submit();
