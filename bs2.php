@@ -23,6 +23,6 @@
 <strong><?php echo $_POST['cemail']; ?></strong>
 </li>
 </ul>
-</div>
+<a target="right" href="random.html">ok</a>
 </body>
 </html>

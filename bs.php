@@ -22,7 +22,7 @@ We have registered your details:
 <strong><?php echo $_POST['DOB']; ?></strong>
 </li>
 </ul>
-
+<a target="right" href="random.html">ok</a>
 </body>
 </html>
 

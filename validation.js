@@ -74,3 +74,4 @@ function Submit(){
       }
   
 }
+/[^0-9.]/

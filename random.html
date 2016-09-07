@@ -7,20 +7,15 @@ form {color: green ;}
 span {color:red;}
 
 </style>
-  <title>Bootstrap Example</title>
+  <title>Bootstrap Case</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js">
-</script>
-</head>
-
-<body>
- <script>
+  <script>
 function myValidate() {
+ 
     var x = document.forms["formA"]["name"].value;
     var y = document.forms["formA"]["age"].value;
     var z = document.forms["formA"]["gender"].value;
@@ -29,7 +24,7 @@ function myValidate() {
     var c = document.getElementById("ageErr");
     var d = document.getElementById("genderErr");
     var e = document.getElementById("DOBErr");
-
+ 
     if (!x || x.length==0) {
         b.innerHTML = "Name Must Be Filled Out";
         return false;
@@ -58,7 +53,8 @@ function myValidate() {
         e.innerHTML = "";
     }
     return true;
-}
+} 
+
 </script> 
 <script>
 function myValidatee() {
@@ -143,15 +139,43 @@ function myValidation() {
 }
 </script>
 
+</head>
+<body>
 
-    <div class="col-sm-1 col-md-5 col-lg-3" >
+<div class="container">
+  <h2>Employee Registration</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1" >Personal </a></li>
+    <li><a data-toggle="tab" href="#menu2">Contact </a></li>
+    <li><a data-toggle="tab" href="#menu3">Address </a></li>
+   
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade  in active ">
+    
+
+      <p> Register Now!!
+      <br>Personal Details
+      <br>Contact Details
+      <br> Address Details
+      <br> 
+      <br>Thankyou!!!!!!
+      </p>
+
+
+
+    </div>
+    <div id="menu1" class="tab-pane fade">
+     
       <form  action="bs.php" onsubmit="return myValidate()" method="post" name="formA">
       <H3>PERSONAL FORM</H3>
 Name:
 <br>
    <span id="nameErr"></span>
    <br>
-    <input type="text" name="name"  placeholder="name"/>     
+    <input type="text" name="name" id = "message"  placeholder="name"/>     
     <br><br>
     
 Age: 
@@ -177,16 +201,17 @@ Date Of Birth:
     
               <br>
                <br>                                                                       
-             <button type="submit" value="submit">Register</button>  
+             <button type="submit" value="submit">check</button> 
          <br> 
+         
  </form>
- </div>
- 
-   <div class="col-sm-2 col-md-5 col-lg-4" >
-    <form  action="bs2.php"  onsubmit="return myValidatee()" method="post" name="formB" >
-	<H3>CONTACT INFORMATION</H3>
-	
-	  
+
+    </div>
+    <div id="menu2" class="tab-pane fade">
+     <form  action="bs2.php"  onsubmit="return myValidatee()" method="post" name="formB" >
+  <H3>CONTACT INFORMATION</H3>
+  
+    
 CellPhone:
 <br>
   <span id="cpErr"></span>
@@ -222,15 +247,15 @@ WorkPhone:
     <br>
     <br>    
      
-             <button type="submit" value="submit">Register!</button> 
+             <button type="submit" value="submit">check</button> 
         
          
  </form>
-</div>
 
-    <div class="col-sm-2 col-md-5 col-lg-4"  >
-    <form  action="bs3.php" onsubmit="return myValidation()" method="post" name="formC">
-	 <H3>ADDRESS INFORMATION</H3>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+ <form  action="bs3.php" onsubmit="return myValidation()" method="post" name="formC">
+   <H3>ADDRESS INFORMATION</H3>
   
 
 Name:
@@ -274,11 +299,15 @@ City:
            </select>
            <br>
           <br>
-             <button type="submit" value="submit">Register!!</button> 
+             <button type="submit" value="submit">register</button> 
          <br> 
  </form>
  </div>
  
-    
+ </div>
+ 
+  </div>
+</div>
+
 </body>
 </html>
