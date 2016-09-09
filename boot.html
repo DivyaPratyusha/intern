@@ -16,6 +16,18 @@ span {color:red;}
   <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js">
 </script>
+  <script>
+  $("#btn1").click(function () {
+     $('li').removeClass('active');
+     $('.nav-tabs li:nth-child(2)').addClass('active');
+ });
+
+ 
+$('.nav li a').click(function(e) {
+    e.preventDefault();
+    return false;
+});
+</script>
 </head>
 
 <body>
@@ -145,7 +157,7 @@ function myValidation() {
 
 
     <div class="col-sm-1 col-md-5 col-lg-3" >
-      <form  action="bs.php" onsubmit="return myValidate()" method="post" name="formA">
+      <form  action="" onsubmit="return myValidate()" method="post" name="formA">
       <H3>PERSONAL FORM</H3>
 Name:
 <br>
@@ -183,7 +195,7 @@ Date Of Birth:
  </div>
  
    <div class="col-sm-2 col-md-5 col-lg-4" >
-    <form  action="bs2.php"  onsubmit="return myValidatee()" method="post" name="formB" >
+    <form  action=""  onsubmit="return myValidatee()" method="post" name="formB" >
 	<H3>CONTACT INFORMATION</H3>
 	
 	  
@@ -229,7 +241,7 @@ WorkPhone:
 </div>
 
     <div class="col-sm-2 col-md-5 col-lg-4"  >
-    <form  action="bs3.php" onsubmit="return myValidation()" method="post" name="formC">
+    <form  action="" onsubmit="return myValidation()" method="post" name="formC">
 	 <H3>ADDRESS INFORMATION</H3>
   
 
